@@ -1,0 +1,38 @@
+@import "../../../styles/variables.scss";
+
+.button {
+  background: $light-color;
+  padding: 10px;
+  width: fit-content;
+  border-radius: 65px;
+  box-shadow: $primary-shadow;
+  color: $grey-color;
+  font-family: $font-family;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  font-weight: 600;
+  display: flex;
+
+  &:hover {
+    color: $primary-color;
+  }
+
+  &:active {
+    box-shadow: $primary-shadow-inset;
+    color: $primary-color;
+  }
+
+  .label {
+    margin: 0px 5px;
+  }
+
+  &.small {
+    font-size: $small-fs;
+  }
+  &.medium {
+    font-size: $medium-fs;
+  }
+  &.large {
+    font-size: $large-fs;
+  }
+}

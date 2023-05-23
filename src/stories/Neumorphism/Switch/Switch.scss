@@ -1,0 +1,89 @@
+@import "../../../styles/variables.scss";
+
+.switch {
+  &-checkbox {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+  }
+
+  &-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    background: $light-color;
+    border-radius: 100px;
+    position: relative;
+    box-shadow: $primary-shadow;
+    transition: all 0.4s ease;
+
+    &.small {
+      width: 50px;
+      height: 25px;
+    }
+
+    &.medium {
+      width: 75px;
+      height: 37px;
+    }
+
+    &.large {
+      width: 100px;
+      height: 50px;
+    }
+
+    &.checked {
+      background: $primary-color;
+    }
+  }
+
+  &-button {
+    position: absolute;
+    left: 5px;
+    border-radius: 45px;
+    transition: 0.2s;
+    background: $primary-light-color;
+    box-shadow: 0 0 2px 0 rgba(10, 10, 10, 0.29);
+    transition: all 0.4s ease;
+
+    &.small {
+      width: 18px;
+      height: 18px;
+    }
+
+    &.medium {
+      width: 30px;
+      height: 30px;
+    }
+
+    &.large {
+      width: 45px;
+      height: 43px;
+    }
+
+    &.checked {
+      background: $light-color;
+    }
+  }
+
+  &-checkbox:checked + &-label &-button {
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+    transition: all 0.4s ease;
+  }
+
+  &-label:active &-button {
+    &.small {
+      width: 22px;
+    }
+
+    &.medium {
+      width: 35px;
+    }
+
+    &.large {
+      width: 50px;
+    }
+  }
+}

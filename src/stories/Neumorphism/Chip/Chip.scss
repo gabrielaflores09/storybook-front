@@ -1,0 +1,33 @@
+@import "../../../styles/variables.scss";
+
+.chip {
+  background: $light-color;
+  box-shadow: $primary-shadow;
+  padding: 10px;
+  width: fit-content;
+  transition: all 0.5s ease;
+  border-radius: 65px;
+  font-family: $font-family;
+  color: $grey-color;
+  font-weight: 600;
+
+  &.clickeable {
+    cursor: pointer;
+  }
+
+  &.hover {
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
+  &.small {
+    font-size: $small-fs-xs;
+  }
+  &.medium {
+    font-size: $medium-fs-xs;
+  }
+  &.large {
+    font-size: $large-fs-xs;
+  }
+}
