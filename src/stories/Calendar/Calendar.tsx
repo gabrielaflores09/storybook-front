@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
 // External deps
 import { Fragment, useState, useEffect } from "react";
 import dayjs from "dayjs";
