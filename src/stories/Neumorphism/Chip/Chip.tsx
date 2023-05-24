@@ -1,5 +1,4 @@
 // External deps
-import React from "react";
 
 // Internal deps
 import "./Chip.scss";

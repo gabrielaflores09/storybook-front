@@ -1,5 +1,5 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
 // External deps
-import { Fragment } from "react";
 
 // Internal deps
 import { formatFullDate, formatsEnum } from "../../../../utils/formatsDate";

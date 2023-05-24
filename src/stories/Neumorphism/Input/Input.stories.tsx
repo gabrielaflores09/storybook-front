@@ -20,5 +20,7 @@ export const InputComponent: Template = {
     label: "Input Component",
     type: "text",
     hoverEffect: true,
+    value: "",
+    widthButton: "auto",
   },
 };
