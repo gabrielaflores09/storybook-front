@@ -1,0 +1,73 @@
+@import "../../../../styles/variables.scss";
+
+.day {
+  width: 65px;
+  height: 65px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 2px;
+
+  &.day-shadow {
+    background-color: #dddddd;
+    border: 1px solid #dddddd;
+    cursor: default;
+  }
+
+  &-text {
+    text-align: center;
+    font-family: $font-family;
+  }
+}
+
+.day-number {
+  float: right;
+  padding: 2px 8px;
+  font-size: 14px;
+  font-family: $font-family;
+}
+
+.content-circle {
+  margin-top: 23px;
+}
+
+.circle {
+  width: 15px;
+  height: 15px;
+  margin: 0 auto;
+  border-radius: 10px;
+
+  &.green {
+    background-color: #219e66;
+  }
+
+  &.green-light {
+    border: 1px solid #219e66;
+    background-color: white;
+  }
+
+  &.red {
+    background-color: #ff6666;
+  }
+
+  &.red-light {
+    border: 1px solid #ff6666;
+    background-color: white;
+  }
+
+  &.blue {
+    background-color: #159ad8;
+  }
+
+  &.blue-light {
+    border: 1px solid #159ad8;
+    background-color: white;
+  }
+}
+
+@media (max-width: 1200px) {
+  .day {
+    width: 55px;
+    height: 55px;
+  }
+}

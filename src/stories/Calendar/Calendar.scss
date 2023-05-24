@@ -1,0 +1,54 @@
+@import "../../styles/variables.scss";
+
+.month {
+  margin: 30px 10px;
+  font-family: $font-family;
+
+  &-title {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+
+    &-name {
+      background-color: $primary-light-color;
+      width: 350px;
+      padding: 2px 0px;
+      text-align: center;
+      font-weight: 600;
+    }
+  }
+
+  &-calendar {
+    display: grid;
+    grid-template-columns: 7;
+    grid-template-rows: 5;
+    flex: 1 1 0%;
+  }
+}
+
+.week {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  border-radius: 10px;
+  cursor: pointer;
+  border: 0px;
+  background-color: white;
+}
+
+.arrow {
+  cursor: pointer;
+  display: flex;
+  text-align: center;
+  margin: 0px 10px;
+}
+
+@media (max-width: 1200px) {
+  .month-title-name {
+    width: 360px;
+  }
+}
