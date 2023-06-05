@@ -18,7 +18,10 @@ export const CalendarComponent: Template = {
     date: dayjs(new Date().toISOString()).format("YYYY-MM-DD"),
     minDate: "",
     maxDate: "",
-    onClickDay: () => {},
+    onClickDay: () => {
+      console.log("onClickDay");
+    },
     disabled: false,
+    showToday: true,
   },
 };

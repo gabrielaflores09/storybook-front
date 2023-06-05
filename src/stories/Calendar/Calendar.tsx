@@ -13,8 +13,9 @@ interface ICalendarProps {
   date: string;
   minDate: string;
   maxDate: string;
-  disabled: boolean;
+  disabled?: boolean;
   onClickDay: () => void | undefined;
+  showToday?: boolean;
 }
 
 const Calendar = ({
@@ -23,10 +24,14 @@ const Calendar = ({
   maxDate,
   disabled,
   onClickDay,
+  showToday,
 }: ICalendarProps) => {
   const [monthIndex, setMonthIndex] = useState(dayjs().month());
   const [yearIndex, setYearIndex] = useState(dayjs().year());
   const [currentMonth, setCurrentMonth] = useState(getMonth());
+  const [today] = useState(
+    dayjs(new Date().toISOString()).format("YYYY-MM-DD")
+  );
 
   const regex = /^\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])/g;
 
@@ -80,7 +85,9 @@ const Calendar = ({
                 minDate={minDate}
                 onClickDay={disabled ? () => {} : onClickDay}
                 rowIdx={idx}
-                // variant=""
+                showToday={showToday || false}
+                today={today}
+                disabled={disabled || false}
               />
             ))}
           </div>

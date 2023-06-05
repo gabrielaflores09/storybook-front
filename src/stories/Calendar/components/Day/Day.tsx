@@ -12,14 +12,27 @@ interface IDayProps {
   minDate: string;
   maxDate: string;
   onClickDay: () => void | undefined;
+  showToday: boolean;
+  today: string;
+  disabled: boolean;
 }
 
-const Day = ({ day, rowIdx, minDate, maxDate }: IDayProps) => {
+const Day = ({
+  day,
+  rowIdx,
+  minDate,
+  maxDate,
+  showToday,
+  today,
+  disabled,
+}: IDayProps) => {
   const isLastDayPrevMonth = rowIdx === 0 && Number(day.format("D")) > 7;
   const isDayNextMonth =
     (rowIdx === 4 || rowIdx === 5) && Number(day.format("D")) <= 14;
 
   const isOtherMonthDay = isLastDayPrevMonth || isDayNextMonth;
+
+  const showColorToday = showToday && today === day.format("YYYY-MM-DD");
 
   const validStyleDay = () => {
     if (minDate || maxDate) {
@@ -46,6 +59,9 @@ const Day = ({ day, rowIdx, minDate, maxDate }: IDayProps) => {
         }
       }
     }
+    if (showColorToday) {
+      return "today";
+    }
     return "";
   };
   return (
@@ -59,16 +75,18 @@ const Day = ({ day, rowIdx, minDate, maxDate }: IDayProps) => {
         // style={colors}
         className={`day ${validStyleDay()} ${
           isOtherMonthDay ? "day-shadow" : ""
-        }`}
+        } ${disabled ? "day-disabled" : ""}`}
         onClick={validStyleDay() ? () => {} : () => {}}
       >
         {isOtherMonthDay ? null : (
           <>
             <div className="day-number">{day.format("D")}</div>
-            {/* <div className="content-circle">
-              <div className={`circle ${variant} ${validStyleDay(true)}`} />
-              <div className="circle" />
-            </div> */}
+            {showColorToday && (
+              <div className="content-circle">
+                <div className={`circle today`} />
+                <div className="circle" />
+              </div>
+            )}
           </>
         )}
       </div>

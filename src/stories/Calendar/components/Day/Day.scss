@@ -7,6 +7,15 @@
   border-radius: 5px;
   cursor: pointer;
   margin: 2px;
+  user-select: none;
+
+  &-disabled {
+    cursor: default;
+  }
+
+  &.today {
+    border: 1.5px solid $primary-light-color;
+  }
 
   &.day-shadow {
     background-color: #dddddd;
@@ -36,6 +45,11 @@
   height: 15px;
   margin: 0 auto;
   border-radius: 10px;
+
+  &.today {
+    border: 1px solid $primary-light-color;
+    background-color: $primary-light-color;
+  }
 
   &.green {
     background-color: #219e66;
